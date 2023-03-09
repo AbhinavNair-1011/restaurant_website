@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Restaurant</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Luxury Restaurant</h1>
+            <ul>
+                <li>Cuisine</li>
+                <li>Beverages</li>
+                <li>Home Delivery</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="allSection">
+            <section class="inputFormDiv" id="section1">
+                <form action="javascript:void(0)" method="post">
+
+                    <label for="menu" id="menuLabel">Menu :
+
+                    </label>
+
+                    <button class="menuBtn" id="menu" value="value">Hover over me</button>
+                    <div class="foods">
+                        <h2 class="h2">Menuu</h2>
+                        <p> Chicken Alfredo <span>520</span></p>
+                        <p> Grilled Salon <span>340</span></p>
+                        <p> BBQ Ribs <span>270</span></p>
+                        <p> Mushroom Risot <span>190</span></p>
+
+
+                    </div>
+
+                    <label for="foodLabel" id="foodLabel">Select the Desired Dish :
+                        <p>*Press control to select multiple dishes</p>
+                    </label>
+                    <select name="food" id="food" multiple>
+
+
+
+                        <option value="Chicken Alfredo">Chicken Alfredo </option>
+
+
+                        <option value="Grilled Salmon">Grilled Salmon </option>
+
+
+                        <option value="BBQ Ribs">BBQ Ribs </option>
+
+
+                        <option value="Mushroom Risot">Mushroom Risot </option>
+
+
+                    </select>
+                    <label for="price" id="price">
+
+                    </label>
+                    <label for="tableLabel" id="tableLabel">Select The Table :</label>
+                    <select name="table1" id="table">
+
+                        <option value="Table1">Table 1 </option>
+                        <option value="Table2">Table 2 </option>
+                        <option value="Table3">Table 3 </option>
+                        <option value="Table4">Table 4 </option>
+
+
+                    </select>
+                    <input id="submitBtn" class="submitBtn " type="submit" value="Submit">
+                </form>
+
+
+
+
+            </section>
+
+            <section class="tables" id="section2">
+                <ul id="st">
+                    <li>Table 1 Orders
+                        <ul id="table1" class="insideTable">
+
+                            <li id="table11">total Amount:</li>
+                        </ul>
+                    </li>
+
+                    <li>Table 2 Orders
+                        <ul id="table2" class="insideTable">
+
+                            <li id="table22">total Amount:</li>
+                        </ul>
+                    </li>
+
+
+                    <li>Table 3 Orders
+                        <ul id="table3" class="insideTable">
+                            <li id="table33">total Amount:</li>
+                         </ul>
+                    </li>
+
+                    <li>Table 4 Orders
+                        <ul id="table4" class="insideTable">
+                            <li id="table44">total Amount:</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </section>
+        </div>
+
+    </main>
+    <footer class="footer">
+        <address>Bangalore India -560097</address>
+        <p>&copy;Fakewebsite</p>
+    </footer>
+
+</body>
+
+</html>
