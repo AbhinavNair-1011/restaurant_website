@@ -1,15 +1,56 @@
 document.addEventListener("DOMContentLoaded", (e) => {
+
+
+  
   let submitBtn = document.querySelector(".submitBtn");
+  let customAxios=axios.create({
+    baseURL:"https://crudcrud.com/api/f432a1f1b5334abda293c0fcba443bf4"
+  })
+
+ customAxios.get("/res")
+ .then(res=>{
+
+   res.data.forEach((each)=>{
+        customAxios.delete(`/res/${each._id}`)
+   })
+ })
+
   var tt = { table1: 0, table2: 0, table3: 0, table4: 0 };
-  let orderedItemsTable1={itemName: [],totalAmount:0 };
-  let orderedItemsTable2={itemName: [],totalAmount:0 };
-  let orderedItemsTable3={itemName: [],totalAmount:0 };
-  let orderedItemsTable4={itemName: [],totalAmount:0 };
+  let orderedItemsTable1={tableNo:1,itemName: [],totalAmount:0 };
+  let orderedItemsTable2={tableNo:2,itemName: [],totalAmount:0 };
+  let orderedItemsTable3={tableNo:3,itemName: [],totalAmount:0 };
+  let orderedItemsTable4={tableNo:4,itemName: [],totalAmount:0 };
+  orderedItemsTable1.served=false;
+  orderedItemsTable2.served=false;
+  orderedItemsTable3.served=false;
+  orderedItemsTable4.served=false;
+
+
+
+
+  let tableNo1Id;
+    let tableNo2Id;
+
+    let tableNo3Id;
+    let tableNo4Id;
+
+    async function updatecrud(tableid,data,tableNo){
+    
+      let responce = await customAxios.put(`/res/${tableid}`,data);
+    
+       console.log(`updated table ${tableNo} - ${JSON.stringify(data)}`)
+      
+  
+      }
+
+
+  
   
   submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
     let tableNo = document.getElementById("table").value;
 
+    
     let tv = document.querySelectorAll("#st li");
     let insideUl1 = document.querySelector("#table1");
     let insideUl2 = document.querySelector("#table2");
@@ -57,6 +98,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         
         orderedItemsTable1.totalAmount=tt.table1;
+        
+        
+
+
+
       
         let a = document.querySelector("#table11");
 
@@ -64,16 +110,27 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
      
       }
+     
       
+    if(!orderedItemsTable1.served){
+      orderedItemsTable1.served=true;
 
-    axios.post("https://crudcrud.com/api/c5d9e96fe17e4913b5ccbedd2ba1607b/restaurant",orderedItemsTable1)
+    customAxios.post("/res",orderedItemsTable1)
     .then(res => {
+      
+         tableNo1Id=res.data._id;
+       
         
     })
     .catch(err => {
-    
+    console.log(err);
     });
+
+  }else{
+   updatecrud(tableNo1Id,orderedItemsTable1,1);
     
+  }
+      
 
    
 
@@ -130,13 +187,29 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         a.innerText = `Total Amount: ${tt.table2}`;
       }
-      axios.post("https://crudcrud.com/api/c5d9e96fe17e4913b5ccbedd2ba1607b/restaurant",orderedItemsTable2)
+    
+      
+      if(!orderedItemsTable2.served){
+        orderedItemsTable2.served=true;
+  
+      customAxios.post("/res",orderedItemsTable2)
       .then(res => {
-          console.log(res)
+        
+           tableNo2Id=res.data._id;
+         
+          
       })
       .catch(err => {
-          console.error(err); 
-      })
+      console.log(err);
+      });
+  
+    }else{
+     updatecrud(tableNo2Id,orderedItemsTable2,2);
+      
+    }
+        
+  
+
     } else if (tableNo == "Table3") {
 
 
@@ -186,13 +259,31 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         a.innerText = `Total Amount: ${tt.table3}`;
       }
-      axios.post("https://crudcrud.com/api/c5d9e96fe17e4913b5ccbedd2ba1607b/restaurant",orderedItemsTable3)
+    
+      
+
+      if(!orderedItemsTable3.served){
+        orderedItemsTable3.served=true;
+  
+      customAxios.post("/res",orderedItemsTable3)
       .then(res => {
-          console.log(res)
+        
+           tableNo3Id=res.data._id;
+         
+          
       })
       .catch(err => {
-          console.error(err); 
-      })
+      console.log(err);
+      });
+  
+    }else{
+     updatecrud(tableNo3Id,orderedItemsTable3,3);
+      
+    }
+        
+  
+
+
     } else if (tableNo == "Table4") {
       for (each of text) {
         let total = 0;
@@ -239,14 +330,31 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         a.innerText = `Total Amount: ${tt.table4}`;
       }
-      axios.post("https://crudcrud.com/api/c5d9e96fe17e4913b5ccbedd2ba1607b/restaurant",orderedItemsTable4)
+
+      if(!orderedItemsTable4.served){
+        orderedItemsTable4.served=true;
+  
+      customAxios.post("/res",orderedItemsTable4)
       .then(res => {
-          console.log(res)
+        
+           tableNo4Id=res.data._id;
+         
+          
       })
       .catch(err => {
-          console.error(err); 
-      })
+      console.log(err);
+      });
+  
+    }else{
+     updatecrud(tableNo4Id,orderedItemsTable4,4);
+      
     }
+        
+      
+      
+    }
+
+
   });
 
   let ul = document.querySelector("#st");
@@ -267,7 +375,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
             orderedItemsTable1.itemName.splice(index,1);
             tt.table1 -= 520;
             orderedItemsTable1.totalAmount=tt.table1;
-          }
+                    }
            
           
           } else if (
@@ -304,6 +412,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           let a = document.querySelector("#table11");
 
           a.innerText = `Total Amount: ${tt.table1}`;
+          updatecrud(tableNo1Id,orderedItemsTable1,1)
         
           break;
         case "Table 2 Orders":
@@ -355,6 +464,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           let b = document.querySelector("#table22");
 
           b.innerText = `Total Amount: ${tt.table2}`;
+          updatecrud(tableNo2Id,orderedItemsTable2,2)
 
           break;
         case "Table 3 Orders":
@@ -407,6 +517,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           let c = document.querySelector("#table33");
 
           c.innerText = `Total Amount: ${tt.table3}`;
+           updatecrud(tableNo3Id,orderedItemsTable3,3)
 
           break;
         case "Table 4 Orders":
@@ -461,12 +572,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
           let d = document.querySelector("#table44");
 
           d.innerText = `Total Amount: ${tt.table4}`;
+          updatecrud(tableNo4Id,orderedItemsTable4,4);
           break;
 
         default:
           break;
       }
+
     }
+
   });
 
   let menuBtn = document.querySelector(".menuBtn");

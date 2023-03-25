@@ -32,6 +32,16 @@ nav h1{
     background-color: rgba(0, 255, 255, 0.152);
     
 }
+@media(max-width:460px){
+    nav h1{
+        font-size:2.1rem;
+    }
+}
+@media(max-width:340px){
+    nav h1{
+        font-size:1.6rem;
+    }
+}
 nav ul{
     display:flex;
     justify-content: space-around;
@@ -67,12 +77,18 @@ form{
     justify-content:space-evenly;
     padding:10px;
     height:390px;
-    width:40%;
+    width:60%;
     margin:auto;
     background-color: rgba(255, 0, 0, 0.289);
     border-radius: 10px;
 border:3px solid rgba(0, 0, 0, 0.485);
 position: relative;
+}
+@media (max-width:700px) {
+    form{
+        /* background-color: rgba(0, 0, 0, 0.502); */
+        width:80%;
+    }
 }
 label{
     font-size:1.7rem;
