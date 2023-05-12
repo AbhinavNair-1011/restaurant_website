@@ -5,4 +5,9 @@ module.exports.addData=(req,res,next)=>{
   let order=new Data(req.body.tableNo,req.body.itemName);
   order.insertIntoDatabase()
 
+  return res.json({
+    status:"successfull"
+  })
+ 
+
 }

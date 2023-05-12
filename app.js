@@ -16,16 +16,17 @@ app.get("/",(req,res)=>{
 })
 
 const addData=require("./routes/addData")
+const deleteData=require("./routes/deleteData");
 app.use(addData)
 
-const deleteData=require("./routes/deleteData");
+
 
 app.use(deleteData)
 
 const fetchData=require("./routes/fetchData");
 app.use(fetchData)
 
-const data=require("./models/data")
+
 sequelize.sync()
 // .then(result=>console.log(result))
 .catch(err=>console.log(err))
