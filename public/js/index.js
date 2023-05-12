@@ -13,6 +13,8 @@ async function fetchData() {
 
 document.addEventListener("DOMContentLoaded", (e) => {
 
+  let tt1 = 0; let tt2 = 0; let tt3 = 0
+  let tt4 = 0;
 
   fetchData()
     .then(result => {
@@ -21,234 +23,203 @@ document.addEventListener("DOMContentLoaded", (e) => {
       let insideUl3 = document.querySelector("#table3");
       let insideUl4 = document.querySelector("#table4");
 
+
+
       for (let each1 of result.data.data) {
         // console.log(each1)
-       
-        
-        if (each1.table1!==null) {
-          console.log(each1.table1)
-           let total = 0;      
-            
-
-            let li = document.createElement("li");
-            let deleteBtn = document.createElement("button");
-
-            deleteBtn.appendChild(document.createTextNode("X"));
-            deleteBtn.className = "delete";
-            deleteBtn.style.float = "right";
-            deleteBtn.style.backgroundColor = "red";
-            deleteBtn.style.color = "white";
-
-            li.style.backgroundColor = "rgb(185, 179, 179,0.3)";
-
-            li.appendChild(document.createTextNode(each1.table1));
-            li.appendChild(deleteBtn);
-            insideUl1.appendChild(li);
 
 
-            // if (each1.table1 === "Chicken Alfredo") {
-            //   orderedItemsTable1.itemName.push(each1.table1)
-            //   tableItem.push(each1.table1)
-            //   total += 520;
-            // } else if (each1.table1 === "Grilled Salmon") {
-            //   orderedItemsTable1.itemName.push(each1.table1)
-            //   tableItem.push(each1.table1)
-            //   total += 340;
-            // } else if (each1.table1 === "BBQ Ribs") {
-            //   orderedItemsTable1.itemName.push(each1.table1)
-            //   tableItem.push(each1.table1)
-            //   total += 270;
-            // } else if (each1.table1 === "Mushroom Risot") {
-            //   orderedItemsTable1.itemName.push(each1.table1)
-            //   tableItem.push(each1.table1)
-            //   total += 190;
-            // }
-
-            // tt.table1 += total;
-
-
-            // orderedItemsTable1.totalAmount = tt.table1;
-            // tableNumber = 1;
+        if (each1.table1 !== null) {
+          // console.log(each1.table1)
 
 
 
+          let li = document.createElement("li");
+          let deleteBtn = document.createElement("button");
+
+          deleteBtn.appendChild(document.createTextNode("X"));
+          deleteBtn.className = "delete";
+          deleteBtn.style.float = "right";
+          deleteBtn.style.backgroundColor = "red";
+          deleteBtn.style.color = "white";
+
+          li.style.backgroundColor = "rgb(185, 179, 179,0.3)";
+
+          li.appendChild(document.createTextNode(each1.table1));
+          li.appendChild(deleteBtn);
+          insideUl1.appendChild(li);
+
+
+          if (each1.table1 === "Chicken Alfredo") {
+
+            tt1 += 520;
+          } else if (each1.table1 === "Grilled Salmon") {
+
+            tt1 += 340;
+          } else if (each1.table1 === "BBQ Ribs") {
+
+            tt1 += 270;
+          } else if (each1.table1 === "Mushroom Risot") {
+
+            tt1 += 190;
+          }
+
+          let a = document.querySelector("#table11");
+
+          a.innerText = `Total Amount: ${tt1}`;
 
 
 
-            let a = document.querySelector("#table11");
-
-            a.innerText = `Total Amount: ${total}`;
-
-
-
-        } else{
-          
-        }
-        if (each1.table2!==null) {
-         
-            let total = 0;
-            let li = document.createElement("li");
-            let deleteBtn = document.createElement("button");
-            deleteBtn.appendChild(document.createTextNode("X"));
-            deleteBtn.className = "delete";
-            deleteBtn.style.float = "right";
-            deleteBtn.style.backgroundColor = "red";
-            deleteBtn.style.color = "white";
-
-            li.style.backgroundColor = "rgb(185, 179, 179,0.3)";
-
-            li.appendChild(document.createTextNode(each1.table2));
-            li.appendChild(deleteBtn);
-
-            insideUl2.appendChild(li);
-
-
-
-            if (each1.table2 === "Chicken Alfredo") {
-              orderedItemsTable2.itemName.push(each1.table2)
-              tableItem.push(each1.table2)
-              total += 520;
-            } else if (each1.table2 === "Grilled Salmon") {
-              orderedItemsTable2.itemName.push(each1.table2)
-              tableItem.push(each1.table2)
-              total += 340;
-            } else if (each1.table2 === "BBQ Ribs") {
-              orderedItemsTable2.itemName.push(each1.table2)
-              tableItem.push(each1.table2)
-              total += 270;
-            } else if (each1.table2 === "Mushroom Risot") {
-              orderedItemsTable2.itemName.push(each1.table2)
-              tableItem.push(each1.table2)
-              total += 190;
-            }
-
-
-
-
-
-
-
-            let a = document.querySelector("#table22");
-
-            a.innerText = `Total Amount: ${total}`;
-          
-       
-        
-
-
-
-        } else{
+        } else {
 
         }
-        if (each1.table3!==null) {
+        if (each1.table2 !== null) {
 
-          
-          
-            let total = 0;
-            let li = document.createElement("li");
-            let deleteBtn = document.createElement("button");
-            deleteBtn.appendChild(document.createTextNode("X"));
-            deleteBtn.className = "delete";
-            deleteBtn.style.float = "right";
-            deleteBtn.style.backgroundColor = "red";
-            deleteBtn.style.color = "white";
 
-            li.style.backgroundColor = "rgb(185, 179, 179,0.3)";
+          let li = document.createElement("li");
+          let deleteBtn = document.createElement("button");
+          deleteBtn.appendChild(document.createTextNode("X"));
+          deleteBtn.className = "delete";
+          deleteBtn.style.float = "right";
+          deleteBtn.style.backgroundColor = "red";
+          deleteBtn.style.color = "white";
 
-            li.appendChild(document.createTextNode(each1.table3));
-            li.appendChild(deleteBtn);
+          li.style.backgroundColor = "rgb(185, 179, 179,0.3)";
 
-            insideUl3.appendChild(li);
+          li.appendChild(document.createTextNode(each1.table2));
+          li.appendChild(deleteBtn);
+
+          insideUl2.appendChild(li);
 
 
 
-            if (each1.tabl3 === "Chicken Alfredo") {
-              orderedItemsTable3.itemName.push(each1.tabl3)
-              tableItem.push(each1.tabl3)
+          if (each1.table2 === "Chicken Alfredo") {
 
-              total += 520;
-            } else if (each1.tabl3 === "Grilled Salmon") {
-              orderedItemsTable3.itemName.push(each1.tabl3)
-              tableItem.push(each1.tabl3)
-              total += 340;
-            } else if (each1.tabl3 === "BBQ Ribs") {
-              orderedItemsTable3.itemName.push(each1.tabl3)
-              tableItem.push(each1.tabl3)
-              total += 270;
-            } else if (each1.tabl3 === "Mushroom Risot") {
-              orderedItemsTable3.itemName.push(each1.tabl3)
-              tableItem.push(each1.tabl3)
-              total += 190;
-            }
+            tt2 += 520;
+          } else if (each1.table2 === "Grilled Salmon") {
+
+            tt2 += 340;
+          } else if (each1.table2 === "BBQ Ribs") {
+
+            tt2 += 270;
+          } else if (each1.table2 === "Mushroom Risot") {
+
+            tt2 += 190;
+          }
+
+
+          let a = document.querySelector("#table22");
+
+          a.innerText = `Total Amount: ${tt2}`;
 
 
 
 
-            let a = document.querySelector("#table33");
-
-            a.innerText = `Total Amount: ${total}`;
-       
 
 
-        } else{
+        } else {
 
         }
-         if (each1.table4!==null) {
-          
-            let total = 0;
-            let li = document.createElement("li");
-            let deleteBtn = document.createElement("button");
-            deleteBtn.className = "delete";
-            deleteBtn.appendChild(document.createTextNode("X"));
-            deleteBtn.style.float = "right";
-            deleteBtn.style.backgroundColor = "red";
-            deleteBtn.style.color = "white";
-
-            li.style.backgroundColor = "rgb(185, 179, 179,0.3)";
-
-            li.appendChild(document.createTextNode(each1.table4));
-            li.appendChild(deleteBtn);
-
-            insideUl4.appendChild(li);
+        if (each1.table3 !== null) {
 
 
-            if (each1.table4 === "Chicken Alfredo") {
-              orderedItemsTable4.itemName.push(each1.table4)
-              tableItem.push(each1.table4)
-              total += 520;
-            } else if (each1.table4 === "Grilled Salmon") {
-              orderedItemsTable4.itemName.push(each1.table4)
-              tableItem.push(each1.table4)
-              total += 340;
-            } else if (each1.table4 === "BBQ Ribs") {
-              orderedItemsTable4.itemName.push(each1.table4)
-              tableItem.push(each1.table4)
-              total += 270;
-            } else if (each1.table4 === "Mushroom Risot") {
-              orderedItemsTable4.itemName.push(each1.table4)
-              tableItem.push(each1.table4)
-              total += 190;
-            }
 
-          
 
-            let a = document.querySelector("#table44");
+          let li = document.createElement("li");
+          let deleteBtn = document.createElement("button");
+          deleteBtn.appendChild(document.createTextNode("X"));
+          deleteBtn.className = "delete";
+          deleteBtn.style.float = "right";
+          deleteBtn.style.backgroundColor = "red";
+          deleteBtn.style.color = "white";
 
-            a.innerText = `Total Amount: ${total}`;
-         
+          li.style.backgroundColor = "rgb(185, 179, 179,0.3)";
 
-        }else{
+          li.appendChild(document.createTextNode(each1.table3));
+          li.appendChild(deleteBtn);
+
+          insideUl3.appendChild(li);
+
+
+
+          if (each1.table3 === "Chicken Alfredo") {
+
+            tt3 += 520;
+          } else if (each1.table3 === "Grilled Salmon") {
+
+            tt3 += 340;
+          } else if (each1.table3 === "BBQ Ribs") {
+
+            tt3 += 270;
+          } else if (each1.table3 === "Mushroom Risot") {
+
+            tt3 += 190;
+          }
+
+
+
+
+          let a = document.querySelector("#table33");
+
+          a.innerText = `Total Amount: ${tt3}`;
+
+
+
+        } else {
+
+        }
+        if (each1.table4 !== null) {
+
+          let total = 0;
+          let li = document.createElement("li");
+          let deleteBtn = document.createElement("button");
+          deleteBtn.className = "delete";
+          deleteBtn.appendChild(document.createTextNode("X"));
+          deleteBtn.style.float = "right";
+          deleteBtn.style.backgroundColor = "red";
+          deleteBtn.style.color = "white";
+
+          li.style.backgroundColor = "rgb(185, 179, 179,0.3)";
+
+          li.appendChild(document.createTextNode(each1.table4));
+          li.appendChild(deleteBtn);
+
+          insideUl4.appendChild(li);
+
+
+          if (each1.table4 === "Chicken Alfredo") {
+
+            tt4 += 520;
+          } else if (each1.table4 === "Grilled Salmon") {
+
+            tt4 += 340;
+          } else if (each1.table4 === "BBQ Ribs") {
+
+            tt4 += 270;
+          } else if (each1.table4 === "Mushroom Risot") {
+
+            tt4 += 190;
+          }
+
+
+
+          let a = document.querySelector("#table44");
+
+          a.innerText = `Total Amount: ${tt4}`;
+
+
+        } else {
 
         }
       }
     })
 
+
+
   let submitBtn = document.querySelector(".submitBtn");
 
 
-
-
-  var tt = { table1: 0, table2: 0, table3: 0, table4: 0 };
+  var tt = { table1: 0 + tt1, table2: 0 + tt2, table3: 0 + tt3, table4: 0 + tt4 };
 
   let orderedItemsTable1 = { tableNo: 1, itemName: [], totalAmount: 0 };
   let orderedItemsTable2 = { tableNo: 2, itemName: [], totalAmount: 0 };
@@ -280,7 +251,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     if (tableNo == "Table1") {
 
       for (each of text) {
-        let total = 0;
+
 
         let li = document.createElement("li");
         let deleteBtn = document.createElement("button");
@@ -301,38 +272,28 @@ document.addEventListener("DOMContentLoaded", (e) => {
         if (each.value === "Chicken Alfredo") {
           orderedItemsTable1.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 520;
+          tt1 += 520;
         } else if (each.value === "Grilled Salmon") {
           orderedItemsTable1.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 340;
+          tt1 += 340;
         } else if (each.value === "BBQ Ribs") {
           orderedItemsTable1.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 270;
+          tt1 += 270;
         } else if (each.value === "Mushroom Risot") {
           orderedItemsTable1.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 190;
+          tt1 += 190;
         }
-
-        tt.table1 += total;
-
-
-        orderedItemsTable1.totalAmount = tt.table1;
         tableNumber = 1;
 
 
 
 
-
-
-        let a = document.querySelector("#table11");
-
-        a.innerText = `Total Amount: ${tt.table1}`;
-
-
       }
+      let a = document.querySelector("#table11");
+      a.innerText = `Total Amount: ${tt1}`;
 
       let details = {
         tableNo: tableNumber,
@@ -340,34 +301,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
       }
       addData(details)
-      //   if(!orderedItemsTable1.served){
-      //     orderedItemsTable1.served=true;
-
-      //   customAxios.post("/res",orderedItemsTable1)
-      //   .then(res => {
-
-      //        tableNo1Id=res.data._id;
-
-
-      //   })
-      //   .catch(err => {
-      //   console.log(err);
-      //   });
-
-      // }else{
-      //  updatecrud(tableNo1Id,orderedItemsTable1,1);
-
-      // }
-
-
-
-
 
 
 
     } else if (tableNo == "Table2") {
+
       for (each of text) {
-        let total = 0;
+
         let li = document.createElement("li");
         let deleteBtn = document.createElement("button");
         deleteBtn.appendChild(document.createTextNode("X"));
@@ -388,60 +328,35 @@ document.addEventListener("DOMContentLoaded", (e) => {
         if (each.value === "Chicken Alfredo") {
           orderedItemsTable2.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 520;
+          tt2 += 520;
         } else if (each.value === "Grilled Salmon") {
           orderedItemsTable2.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 340;
+          tt2 += 340;
         } else if (each.value === "BBQ Ribs") {
           orderedItemsTable2.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 270;
+          tt2 += 270;
         } else if (each.value === "Mushroom Risot") {
           orderedItemsTable2.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 190;
+          tt2 += 190;
         }
 
 
-        tt.table2 += total;
+        // tt.table2 += total;
 
-        orderedItemsTable2.totalAmount = tt.table2;
         tableNumber = 2;
 
-
-
-
-
-
-        let a = document.querySelector("#table22");
-
-        a.innerText = `Total Amount: ${tt.table2}`;
       }
+      let a = document.querySelector("#table22");
+      a.innerText = `Total Amount: ${tt2}`;
       let details = {
         tableNo: tableNumber,
         itemName: tableItem
 
       }
       addData(details)
-      //   if(!orderedItemsTable2.served){
-      //     orderedItemsTable2.served=true;
-
-      //   customAxios.post("/res",orderedItemsTable2)
-      //   .then(res => {
-
-      //        tableNo2Id=res.data._id;
-
-
-      //   })
-      //   .catch(err => {
-      //   console.log(err);
-      //   });
-
-      // }else{
-      //  updatecrud(tableNo2Id,orderedItemsTable2,2);
-
-      // }
 
 
 
@@ -449,7 +364,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 
       for (each of text) {
-        let total = 0;
+
         let li = document.createElement("li");
         let deleteBtn = document.createElement("button");
         deleteBtn.appendChild(document.createTextNode("X"));
@@ -471,22 +386,21 @@ document.addEventListener("DOMContentLoaded", (e) => {
           orderedItemsTable3.itemName.push(each.value)
           tableItem.push(each.vaule)
 
-          total += 520;
+          tt3 += 520;
         } else if (each.value === "Grilled Salmon") {
           orderedItemsTable3.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 340;
+          tt3 += 340;
         } else if (each.value === "BBQ Ribs") {
           orderedItemsTable3.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 270;
+          tt3 += 270;
         } else if (each.value === "Mushroom Risot") {
           orderedItemsTable3.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 190;
+          tt3 += 190;
         }
 
-        tt.table3 += total;
 
         orderedItemsTable3.totalAmount = tt.table3;
         tableNumber = 3;
@@ -494,10 +408,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 
 
-        let a = document.querySelector("#table33");
 
-        a.innerText = `Total Amount: ${tt.table3}`;
       }
+      let a = document.querySelector("#table33");
+      a.innerText = `Total Amount: ${tt3}`;
 
       let details = {
         tableNo: tableNumber,
@@ -506,31 +420,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
       }
       addData(details)
 
-      //   if(!orderedItemsTable3.served){
-      //     orderedItemsTable3.served=true;
-
-      //   customAxios.post("/res",orderedItemsTable3)
-      //   .then(res => {
-
-      //        tableNo3Id=res.data._id;
-
-
-      //   })
-      //   .catch(err => {
-      //   console.log(err);
-      //   });
-
-      // }else{
-      //  updatecrud(tableNo3Id,orderedItemsTable3,3);
-
-      // }
-
-
 
 
     } else if (tableNo == "Table4") {
+
       for (each of text) {
-        let total = 0;
+
         let li = document.createElement("li");
         let deleteBtn = document.createElement("button");
         deleteBtn.className = "delete";
@@ -550,59 +445,35 @@ document.addEventListener("DOMContentLoaded", (e) => {
         if (each.value === "Chicken Alfredo") {
           orderedItemsTable4.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 520;
+          tt4 += 520;
         } else if (each.value === "Grilled Salmon") {
           orderedItemsTable4.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 340;
+          tt4 += 340;
         } else if (each.value === "BBQ Ribs") {
           orderedItemsTable4.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 270;
+          tt4 += 270;
         } else if (each.value === "Mushroom Risot") {
           orderedItemsTable4.itemName.push(each.value)
           tableItem.push(each.value)
-          total += 190;
+          tt4 += 190;
         }
 
-        tt.table4 += total;
 
         orderedItemsTable4.totalAmount = tt.table4;
         tableNumber = 4;
 
 
-
-
-        let a = document.querySelector("#table44");
-
-        a.innerText = `Total Amount: ${tt.table4}`;
       }
+      let a = document.querySelector("#table44");
+      a.innerText = `Total Amount: ${tt4}`;
       let details = {
         tableNo: tableNumber,
         itemName: tableItem
 
       }
       addData(details)
-
-      //   if(!orderedItemsTable4.served){
-      //     orderedItemsTable4.served=true;
-
-      //   customAxios.post("/res",orderedItemsTable4)
-      //   .then(res => {
-
-      //        tableNo4Id=res.data._id;
-
-
-      //   })
-      //   .catch(err => {
-      //   console.log(err);
-      //   });
-
-      // }else{
-      //  updatecrud(tableNo4Id,orderedItemsTable4,4);
-
-      // }
-
 
 
     }
@@ -624,92 +495,66 @@ document.addEventListener("DOMContentLoaded", (e) => {
         case "Table 1 Orders":
 
           if (e.target.parentElement.childNodes[0].data === "Chicken Alfredo") {
-            let index = orderedItemsTable1.itemName.indexOf("Chicken Alfredo");
-            if (index !== -1) {
-              orderedItemsTable1.itemName.splice(index, 1);
-              tt.table1 -= 520;
-              orderedItemsTable1.totalAmount = tt.table1;
-            }
+
+            tt1 -= 520;
 
 
           } else if (
             e.target.parentElement.childNodes[0].data === "Grilled Salmon") {
-            let index = orderedItemsTable1.itemName.indexOf("Grilled Salmon");
-            if (index !== -1) {
-              orderedItemsTable1.itemName.splice(index, 1);
-              tt.table1 -= 340;
-              orderedItemsTable1.totalAmount = tt.table1;
-            }
 
-
-          } else if (e.target.parentElement.childNodes[0].data === "BBQ Ribs") {
-            let index = orderedItemsTable1.itemName.indexOf("BBQ Ribs");
-            if (index !== -1) {
-              orderedItemsTable1.itemName.splice(index, 1);
-              tt.table1 -= 270;
-              orderedItemsTable1.totalAmount = tt.table1;
-            }
-
-
-          } else if (
-            e.target.parentElement.childNodes[0].data === "Mushroom Risot"
-          ) {
-            let index = orderedItemsTable1.itemName.indexOf("Mushroom Risot");
-            if (index !== -1) {
-              orderedItemsTable1.itemName.splice(index, 1);
-              tt.table1 -= 190;
-              orderedItemsTable1.totalAmount = tt.table1;
-            }
+            tt1 -= 340;
 
           }
+
+
+          else if (e.target.parentElement.childNodes[0].data === "BBQ Ribs") {
+
+            tt1 -= 270;
+
+          }
+
+
+          else if (
+            e.target.parentElement.childNodes[0].data === "Mushroom Risot"
+          ) {
+
+            tt1 -= 190;
+
+          }
+
+
           let a = document.querySelector("#table11");
-
-          a.innerText = `Total Amount: ${tt.table1}`;
-
-
-          // updatecrud(tableNo1Id,orderedItemsTable1,1)
+          a.innerText = `Total Amount: ${tt1}`;
 
           break;
+
         case "Table 2 Orders":
 
 
           if (e.target.parentElement.childNodes[0].data === "Chicken Alfredo") {
-            let index = orderedItemsTable2.itemName.indexOf("Chicken Alfredo");
-            if (index !== -1) {
-              orderedItemsTable2.itemName.splice(index, 1);
-              tt.table2 -= 520;
-              orderedItemsTable2.totalAmount = tt.table2;
-            }
-
-
+            
+              tt2 -= 520;
+             
+            
           } else if (
             e.target.parentElement.childNodes[0].data === "Grilled Salmon") {
-            let index = orderedItemsTable2.itemName.indexOf("Grilled Salmon");
-            if (index !== -1) {
-              orderedItemsTable2.itemName.splice(index, 1);
-              tt.table2 -= 340;
-              orderedItemsTable2.totalAmount = tt.table2;
-            }
+           
+              tt2 -= 340;
+              
 
 
           } else if (e.target.parentElement.childNodes[0].data === "BBQ Ribs") {
             let index = orderedItemsTable2.itemName.indexOf("BBQ Ribs");
-            if (index !== -1) {
-              orderedItemsTable2.itemName.splice(index, 1);
-              tt.table2 -= 270;
-              orderedItemsTable2.totalAmount = tt.table2;
-            }
-
+            
+              tt2 -= 270;
+              
 
           } else if (
             e.target.parentElement.childNodes[0].data === "Mushroom Risot"
           ) {
-            let index = orderedItemsTable2.itemName.indexOf("Mushroom Risot");
-            if (index !== -1) {
-              orderedItemsTable2.itemName.splice(index, 1);
-              tt.table2 -= 190;
-              orderedItemsTable2.totalAmount = tt.table2;
-            }
+            
+              tt2 -= 190;
+              
 
           }
 
@@ -717,115 +562,74 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
           let b = document.querySelector("#table22");
 
-          b.innerText = `Total Amount: ${tt.table2}`;
-          // updatecrud(tableNo2Id,orderedItemsTable2,2)
+          b.innerText = `Total Amount: ${tt2}`;
+
 
           break;
         case "Table 3 Orders":
 
 
           if (e.target.parentElement.childNodes[0].data === "Chicken Alfredo") {
-            let index = orderedItemsTable3.itemName.indexOf("Chicken Alfredo");
-            if (index !== -1) {
-              orderedItemsTable3.itemName.splice(index, 1);
-              tt.table3 -= 520;
-              orderedItemsTable3.totalAmount = tt.table3;
-            }
-
-
+            
+              tt3 -= 520;
+              
           } else if (
             e.target.parentElement.childNodes[0].data === "Grilled Salmon") {
-            let index = orderedItemsTable3.itemName.indexOf("Grilled Salmon");
-            if (index !== -1) {
-              orderedItemsTable3.itemName.splice(index, 1);
-              tt.table3 -= 340;
-              orderedItemsTable3.totalAmount = tt.table3;
-            }
-
+            
+              tt3 -= 340;
+             
 
           } else if (e.target.parentElement.childNodes[0].data === "BBQ Ribs") {
-            let index = orderedItemsTable3.itemName.indexOf("BBQ Ribs");
-            if (index !== -1) {
-              orderedItemsTable3.itemName.splice(index, 1);
-              tt.table3 -= 270;
-              orderedItemsTable3.totalAmount = tt.table3;
-            }
-
+            
+              tt3 -= 270;
+             
 
           } else if (
             e.target.parentElement.childNodes[0].data === "Mushroom Risot"
           ) {
-            let index = orderedItemsTable3.itemName.indexOf("Mushroom Risot");
-            if (index !== -1) {
-              orderedItemsTable3.itemName.splice(index, 1);
-              tt.table3 -= 190;
+            
+              tt3 -= 190;
               orderedItemsTable3.totalAmount = tt.table3;
             }
 
-          }
-
-
-
+          
 
           let c = document.querySelector("#table33");
 
-          c.innerText = `Total Amount: ${tt.table3}`;
-          //  updatecrud(tableNo3Id,orderedItemsTable3,3)
+          c.innerText = `Total Amount: ${tt3}`;
 
           break;
         case "Table 4 Orders":
 
 
           if (e.target.parentElement.childNodes[0].data === "Chicken Alfredo") {
-            let index = orderedItemsTable4.itemName.indexOf("Chicken Alfredo");
-            if (index !== -1) {
-              orderedItemsTable4.itemName.splice(index, 1);
-              tt.table4 -= 520;
-              orderedItemsTable4.totalAmount = tt.table4;
-
-            }
+           
+              tt4 -= 520;
+          
 
 
           } else if (
             e.target.parentElement.childNodes[0].data === "Grilled Salmon") {
-            let index = orderedItemsTable4.itemName.indexOf("Grilled Salmon");
-            if (index !== -1) {
-              orderedItemsTable4.itemName.splice(index, 1);
-              tt.table4 -= 340;
-              orderedItemsTable4.totalAmount = tt.table4;
-            }
-
-
+            
+              tt4 -= 340;
+             
           } else if (e.target.parentElement.childNodes[0].data === "BBQ Ribs") {
-            let index = orderedItemsTable4.itemName.indexOf("BBQ Ribs");
-            if (index !== -1) {
-              orderedItemsTable4.itemName.splice(index, 1);
-              tt.table4 -= 270;
-              orderedItemsTable4.totalAmount = tt.table4;
-
-            }
-
-
+            
+              tt4 -= 270;
+             
           } else if (
             e.target.parentElement.childNodes[0].data === "Mushroom Risot"
           ) {
-            let index = orderedItemsTable4.itemName.indexOf("Mushroom Risot");
-            if (index !== -1) {
-              orderedItemsTable4.itemName.splice(index, 1);
-              tt.table4 -= 190;
-              orderedItemsTable4.totalAmount = tt.table4;
-
-            }
-
+            
+              tt4 -= 190;
+             
           }
 
 
 
           let d = document.querySelector("#table44");
+          d.innerText = `Total Amount: ${tt4}`;
 
-          d.innerText = `Total Amount: ${tt.table4}`;
-        // updatecrud(tableNo4Id,orderedItemsTable4,4);
-        // break;
 
         default:
           break;
@@ -853,14 +657,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
     menuDiv.style.visibility = "unset";
     menuDiv.style.display = "flex";
     menuDiv.style.justifyContent = "space-between";
-
+g
     button.addEventListener("click", (e) => {
       menuDiv.style.display = "none";
       button.style.display = "none";
     });
   });
-
-
 
 
 
