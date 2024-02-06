@@ -28,15 +28,17 @@ class Data{
         this.itemName=itemName;
     }
     insertIntoDatabase(){
-        if(this.tableNo===1){
+        console.log("running")
+        if(this.tableNo==1){
             for(let each of this.itemName ){
+                console.log(each)
                 tableOrders.create({
                     table1:each
                      })
                      .catch(err=>console.log(err))
             }
         }
-     else if(this.tableNo===2){
+     else if(this.tableNo==2){
         for(let each of this.itemName ){
            tableOrders.create({
                 table2:each
@@ -44,7 +46,7 @@ class Data{
                  .catch(err=>console.log(err))
         }
     }
-    else if(this.tableNo===3){
+    else if(this.tableNo==3){
         for(let each of this.itemName ){
              tableOrders.create({
                 table3:each
@@ -52,7 +54,7 @@ class Data{
                  .catch(err=>console.log(err))
         }
     }
-    else if(this.tableNo===4){
+    else if(this.tableNo==4){
         for(let each of this.itemName ){
            tableOrders.create({
                 table4:each
@@ -64,20 +66,21 @@ class Data{
     }
 
     static deleteFromDatabase(tableName,itemName){
-        console.log(tableName,itemName)
-        if(tableName=="Table 1 Orders"){
+        if(tableName=="table1"){
             return tableOrders.findOne({where:{
                 table1:itemName,
                 
             }
-        })
-                .then(result=>{
+        }).then(result=>{
                if(result){
                     return result.destroy()
                }
                   
                 })
-          }else  if(tableName=="Table 2 Orders"){
+                .catch(err=>{
+                    console.log(err)
+                })
+          }else  if(tableName=="table2"){
             return tableOrders.findOne({where:{
                 table2:itemName,
                 
@@ -88,7 +91,7 @@ class Data{
                     return result.destroy()
                }
             })
-          }else  if(tableName=="Table 3 Orders"){
+          }else  if(tableName=="table3"){
             return tableOrders.findOne({where:{
                 table3:itemName,
                 
@@ -99,7 +102,7 @@ class Data{
                     return result.destroy()
                }
             })
-          }else  if(tableName=="Table 4 Orders"){
+          }else  if(tableName=="table4"){
             return tableOrders.findOne({where:{
                 table4:itemName,
                 
